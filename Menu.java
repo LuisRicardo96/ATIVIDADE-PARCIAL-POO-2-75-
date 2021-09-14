@@ -1,6 +1,6 @@
 /* <UNIME>
 * <BSI>
-* <PROGAMA«√O ORIENTADA A OBJETO 2>
+* <PROGAMA√á√ÉO ORIENTADA A OBJETO 2>
 * <PABLO ROXO>
 * <LUIS RICARDO SOUSA BORGES>
 */
@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 
@@ -22,14 +23,15 @@ public class Menu {
 		
 		boolean rodando = true;
 		while(rodando) {
+			
 			System.out.println("[1] Cadastrar usuario");
-			System.out.println("[2] Remover por posiÁ„o");
+			System.out.println("[2] Remover por posi√ß√£o");
 			System.out.println("[3] Remover por nome");
 			System.out.println("[4] Listar Participantes");
-			System.out.println("[5] Remover usuario");
+			System.out.println("[5] Pesquisar Participante ");
 			System.out.println("[6] Limpar Lista");
 			System.out.println("[7] Encerrar");
-			System.out.print("Digite a opÁ„o: ");
+			System.out.print("Digite a op√ß√£o: ");
 			String opcao = scanner.nextLine();
 			
 			switch(opcao) {
@@ -38,18 +40,18 @@ public class Menu {
 				   System.out.println("=== CADASTRO DE USUARIO ===");
 				   System.out.println("Digite seu nome: ");
 				   String nome = scanner.nextLine();
-				   Usuario u = new Usuario();
-				   u.setNome(nome);
+				   Usuario f = new Usuario();
+				   f.setNome(nome);
 				   
-				   usuarios.add(u);
+				   usuarios.add(f);
 				   break;   
 			   }
 			   case "2":{
-				   System.out.println("=== REMOVER USUARIO NA POSI«√O ===");
+				   System.out.println("=== REMOVER USUARIO NA POSI√á√ÉO ===");
 				   for (int i = 0; i< usuarios.size(); i++) {
 					   
-					   Usuario uTemp = usuarios.get(i);
-					   System.out.println("[" + i + "]" + uTemp.getNome());			   
+					   Usuario fTemp = usuarios.get(i);
+					   System.out.println("[" + i + "]" + fTemp.getNome());			   
 				   }
 				   
 				   System.out.println("Digite o valor de referencia: ");
@@ -65,8 +67,8 @@ public class Menu {
 				   System.out.println("=== REMOVER USUARIO PELO NOME ===");
 				   for (int i = 0; i< usuarios.size(); i++) {
 					   
-					   Usuario uTemp = usuarios.get(i);
-					   System.out.println("[" + i + "]" + uTemp.getNome());			   
+					   Usuario fTemp = usuarios.get(i);
+					   System.out.println("[" + i + "]" + fTemp.getNome());			   
 				   }
 				   
 				   System.out.println("Digite o nome: ");
@@ -81,7 +83,7 @@ public class Menu {
 			   case "4":{
 				   System.out.println("=== LISTA DE PARTICIPANTES ===");
 				   for (int i = 0; i< usuarios.size(); i++) {
-					   Usuario uTemp = usuarios.get(i);
+					   Usuario fTemp = usuarios.get(i);
 					   System.out.println("Participantes: " + i);
 					   System.out.println("\tNome: " + usuarios.get(i).getNome());
 				   }
@@ -95,16 +97,16 @@ public class Menu {
 				   
 				   boolean encontrado = false;
 				   for (int i = 0; i< usuarios.size(); i++) {
-					   Usuario uTemp = usuarios.get(i);
-					   if (nome.equals(uTemp.getNome())) {
+					   Usuario fTemp = usuarios.get(i);
+					   if (nome.equals(fTemp.getNome())) {
 						   System.out.println("Usuario encontrado");
-						   System.out.println("\tNome: " + uTemp.getNome());
+						   System.out.println("\tNome: " + fTemp.getNome());
 						   encontrado = true;
 						   break;
 					      }
 				   }
-				   if (!encontrado);{
-					   System.out.println("Usuario n„o encontrado");
+				   if (encontrado == false){
+					   System.out.println("Usuario n√£o encontrado");
 				   }
 				   break;    
 			   }
@@ -119,7 +121,9 @@ public class Menu {
 				   break;   
 			   }
 			   case "8":{
-				  
+				 
+			        };
+				   
 				   break;   
 			   }
 			
@@ -130,6 +134,6 @@ public class Menu {
 		
 		 }
 		
-	}
+	
 
 
